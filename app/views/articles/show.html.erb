@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag "normalize" %>
+<%= stylesheet_link_tag "skeleton" %>
+
+<div class="container">
+
+  <div class="row">
+    <div class="twelve columns grey center"><h1>Alpha-blog</h1></div>
+  </div>
+
+  <div class="row">
+    <div class="four columns grey center"><%= link_to 'Home', root_path %></div>
+    <div class="four columns grey center"><%= link_to 'About', about_path %></div>
+    <div class="four columns grey center"><%= link_to 'Archive', archive_path %></div>
+  </div>
+
+  <div class="row">
+    <div class="twelve columns grey center">Selected article</div>
+  </div>
+
+  <div class="row">
+    <div class="four columns grey center">Title:<br /><%= @article.title %></div>
+    <div class="eight columns grey center">Description:<br /><%= @article.description %></div>
+  </div>
+
+</div>

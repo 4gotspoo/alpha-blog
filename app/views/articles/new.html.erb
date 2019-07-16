@@ -21,7 +21,16 @@
     <div class="eight columns grey center">
     <%= f.label :description %>
     <%= f.text_area :description %>
-	<% end %></div>
+	<% end %>
+    <% if @article.errors.any? %>
+    <p>The following errors are preventing the article from being created:</p>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+    <% end %>
+    </div>
   </div>
 
 </div>
