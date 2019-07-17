@@ -1,0 +1,8 @@
+<% if @article.errors.any? %>
+<p>The following errors are preventing the article from being created:</p>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>

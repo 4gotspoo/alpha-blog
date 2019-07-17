@@ -25,6 +25,13 @@ class ArticlesController < ApplicationController
 		@article = Article.find(params[:id])
 	end
 
+	def destroy
+		@article = Article.find(params[:id])
+		@article.destroy
+		flash[:notice] = "Article was successfully removed!"
+		redirect_to articles_path
+	end
+
 	def archive
 		@articles = Article.all
 	end

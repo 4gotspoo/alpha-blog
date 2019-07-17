@@ -5,7 +5,7 @@
 </div>
 
 <div class="row">
-  <div class="four columns grey center">
+  <div class="twelve columns grey center">
     <%= form_for @article do |f| %>
       <%= f.label :id %>
       <%= @article.id %>
@@ -14,8 +14,6 @@
       <%= @article.created_at %><br /><br />
       <%= f.label :updated_at %>
       <%= @article.updated_at %>
-  </div>
-  <div class="eight columns grey center">
       <%= f.label :title %>
       <%= f.text_field :title %><br /><br />
       <%= f.label :description %>
@@ -23,13 +21,6 @@
       <%= f.submit %>
 	<% end %>
 
-    <% if @article.errors.any? %>
-    <p>The following errors are preventing the article from being created:</p>
-      <ul>
-        <% @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      </ul>
-    <% end %>
-  <% end %>
+    <%= render 'form' %>
   </div>
 </div>
