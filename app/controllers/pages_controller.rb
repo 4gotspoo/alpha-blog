@@ -9,7 +9,7 @@ class PagesController < ApplicationController
 	end
 
 	def archive
-
+		@articles = Article.all
 	end
 
 end

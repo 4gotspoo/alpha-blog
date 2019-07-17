@@ -423,7 +423,12 @@ there.
 /* Edited
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .grey {
-background-color: #ECECEC; }
+  background-image: linear-gradient(to right, rgba(231,225,235,1),
+  rgba(231,225,235,0.8),
+  rgba(231,225,235,0.4),
+  rgba(231,225,235,0.8),
+  rgba(231,225,235,1));
+}
 
 .center {
 text-align: center; }

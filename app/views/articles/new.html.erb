@@ -1,36 +1,22 @@
-<%= stylesheet_link_tag "normalize" %>
-<%= stylesheet_link_tag "skeleton" %>
-
-<div class="container">
-
-  <div class="row">
-    <div class="twelve columns grey center"><h1>Alpha-blog</h1></div>
-  </div>
-
-  <div class="row">
-    <div class="four columns grey center"><%= link_to 'Home', root_path %></div>
-    <div class="four columns grey center"><%= link_to 'About', about_path %></div>
-    <div class="four columns grey center"><%= link_to 'Archive', archive_path %></div>
-  </div>
-
-  <div class="row">
-    <div class="four columns grey center"><%= form_for @article do |f| %>
+<div class="row">
+  <div class="four columns grey center">
+    <%= form_for @article do |f| %>    
     <%= f.label :title %>
-    <%= f.text_field :title %><br /><br />
-    <%= f.submit %></div>
-    <div class="eight columns grey center">
+    <%= f.text_field :title %>
+  </div>
+  <div class="eight columns grey center">
     <%= f.label :description %>
     <%= f.text_area :description %>
-	<% end %>
+    <%= f.submit %>
+    <% end %>
+
     <% if @article.errors.any? %>
     <p>The following errors are preventing the article from being created:</p>
       <ul>
         <% @article.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
-      <% end %>
-    </ul>
+      </ul>
     <% end %>
-    </div>
+  <% end %>
   </div>
-
 </div>
