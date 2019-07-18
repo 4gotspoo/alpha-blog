@@ -22,13 +22,17 @@
     Description<br />
     <%= x.description %>
   </div>
-  <div class="three columns grey center">
-    Created<br />
-    <%= x.created_at %>
+  <div class="two columns grey center">
+    Created By<br />
+    <%= x.user.username if x.user %>
   </div>
-  <div class="three columns grey center">
+  <div class="two columns grey center">
+    Created<br />
+    <%= time_ago_in_words(x.created_at) %> ago
+  </div>
+  <div class="two columns grey center">
     Edited<br />
-    <%= x.updated_at %>
+    <%= time_ago_in_words(x.updated_at) %> ago
   </div>
 </div>
 
