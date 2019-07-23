@@ -453,5 +453,5 @@ hr {
 margin: 0em; }
 
 .gravatar {
-border-radius: 30%;
-border: 2px solid black; }
+padding: 10px;
+border-radius: 30%; }

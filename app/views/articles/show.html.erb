@@ -7,17 +7,24 @@
     <%= @article.id %><br />
     <%= link_to 'EDIT', edit_article_path(@article.id) %>
   </div>
-  <div class="two columns grey center">Title<br />
+  <div class="two columns grey center"><strong>Title</strong><br />
     <%= @article.title %>
   </div>
-  <div class="three columns grey center">Description<br />
+  <div class="three columns grey center"><strong>Description</strong><br />
     <%= @article.description %>
   </div>
-  <div class="three columns grey center">Created<br />
-    <%= @article.created_at %>
+  <div class="two columns grey center"><strong>Author</strong><br />
+    <%= link_to(@article.user) do %>
+		<%= @article.user.username if @article.user %>
+	<% end %>
+
+<br />
   </div>
-  <div class="three columns grey center">Edited<br />
-    <%= @article.updated_at %>
+  <div class="two columns grey center"><strong>Time Published</strong><br />
+    <%= time_ago_in_words(@article.created_at) %>
+  </div>
+  <div class="two columns grey center"><strong>Since Revision</strong><br />
+    <%= time_ago_in_words(@article.updated_at) %>
   </div>
 </div>
 
