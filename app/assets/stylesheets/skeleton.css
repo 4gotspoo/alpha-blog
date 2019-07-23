@@ -448,3 +448,10 @@ textarea {
   width: 85%;
   height: 150px;
 }
+
+hr {
+margin: 0em; }
+
+.gravatar {
+border-radius: 30%;
+border: 2px solid black; }
