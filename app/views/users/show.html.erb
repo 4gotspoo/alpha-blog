@@ -24,7 +24,7 @@
 	</div>
 	<hr>
 	<hr>
-	<% @user.articles.each do |x| %>
+	<% @user_articles.each do |x| %>
 	<div class="row">
 		<div class="two columns center">
 			<%= link_to 'Show', article_path(x.id) %>
@@ -36,10 +36,13 @@
 			<%= x.description %>
 		</div>
 	</div>
-	<% if x != @user.articles.last %>
-		<hr>
+	<hr>
 	<% end %>
-	<% end %>
+	<div class="row">
+		<div class="twelve columns center">
+		<%= will_paginate @user_articles %>
+		</div>
+	</div>
   </div>
 </div>
 
