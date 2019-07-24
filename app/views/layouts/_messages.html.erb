@@ -1,5 +1,23 @@
 <% flash.each do |name, msg| %>
-  <ul>
+<div class = "row">
+<% if flash[:danger] %>
+<div class = "twelve columns red center">
+  <ul class="flash">
     <li><%= msg %></li>
   </ul>
+</div>
+<% elsif flash[:success] %>
+<div class = "twelve columns green center">
+  <ul class="flash">
+    <li><%= msg %></li>
+  </ul>
+</div>
+<% else %>
+<div class = "twelve columns grey center">
+  <ul class="flash">
+    <li><%= msg %></li>
+  </ul>
+</div>
+<% end %>
+</div>
 <% end %>

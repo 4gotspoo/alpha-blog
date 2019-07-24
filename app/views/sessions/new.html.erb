@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="twelve columns grey center">
+    <h3>Log in to account</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="twelve columns grey center">
+    <%= form_for(:session, url: login_path) do |f| %> 
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control", placeholder: "Email", autofocus: true %>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control", placeholder: "Password", autocomplete: "off" %><br /><br />
+	<%= f.submit "Log in" %>
+	<% end %>
+
+
+
+	<p><%= link_to 'Cancel request, return to article list', articles_path %></p>
+  </div>
+</div>

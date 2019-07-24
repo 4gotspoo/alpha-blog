@@ -12,9 +12,13 @@
     <%= link_to 'About', about_path %>
   </div>
   <div class="three columns grey center">
-    <%= link_to 'Archive', archive_path %>
+    <%= link_to 'Index', articles_path %>
   </div>
   <div class="three columns grey center">
-    <%= link_to 'Index', articles_path %>
+	<% if session[:user_id] %>
+    <%= link_to @user.username, user_path(@user.id) %> | <%= link_to 'Logout', logout_path, method: :delete %>
+	<% else %>
+	<%= link_to 'Register', signup_path %> | <%= link_to 'Login', login_path %>
+	<% end %>
   </div>
 </div>

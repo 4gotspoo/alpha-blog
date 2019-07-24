@@ -423,12 +423,26 @@ there.
 /* Edited
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .grey {
-  background-image: linear-gradient(to right, rgba(231,225,235,0.8),
-  rgba(231,225,235,0.5),
-  rgba(231,225,235,0.3),
-  rgba(231,225,235,0.5),
-  rgba(231,225,235,0.8));
+  background-image: linear-gradient(to right, rgba(231,225,235,0.9),
+  rgba(231,225,235,0.6),
+  rgba(231,225,235,0.4),
+  rgba(231,225,235,0.6),
+  rgba(231,225,235,0.9));
 }
+
+.red {
+  background-image: linear-gradient(to right, rgba(255, 187, 187,1),
+  rgba(255, 187, 187,0.7),
+  rgba(255, 187, 187,0.5),
+  rgba(255, 187, 187,0.7),
+  rgba(255, 187, 187,1));}
+
+.green {
+  background-image: linear-gradient(to right, rgba(187, 255, 187,1),
+  rgba(187, 255, 187,0.7),
+  rgba(187, 255, 187,0.5),
+  rgba(187, 255, 187,0.7),
+  rgba(187, 255, 187,1));}
 
 .center {
 text-align: center; }
@@ -455,6 +469,13 @@ margin: 0em; }
 .gravatar {
 padding: 10px;
 border-radius: 30%; }
+
+.flash {
+  list-style: none;
+  padding: 0em; 
+  margin: 0em;
+  margin-top: 0.1em;
+  font-size: 120%; }
 
 .pagination {
   text-align: center;
