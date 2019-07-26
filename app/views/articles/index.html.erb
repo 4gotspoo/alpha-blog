@@ -1,38 +1,26 @@
 <div class="row">
-  <div class="twelve columns grey center"><h2>Technical index of all articles</h2></div>
+  <div class="twelve columns grey center"><h2>Index of all articles</h2></div>
 </div>
+<% if logged_in? %>
 <div class="row">
   <div class="twelve columns grey center"><%= link_to 'Create a new article', new_article_path %></div>
 </div>
+<% end %>
 
 <% @articles.each do |x| %>
 
 <div class="row">
-  <div class="one columns grey center">
-    <%= x.id %><br />
-    <%= link_to 'Show', article_path(x.id) %><br />
-    <%= link_to 'Edit', edit_article_path(x.id) %>
+  <div class="four columns grey center">
+        <strong>Author:</strong><br /><%= link_to x.user.username, user_path(x.id) if x.user %><br/><br/>Posted <%= time_ago_in_words(x.created_at) %> ago
   </div>
-  <div class="two columns grey center">
-    Title<br />
-    <%= x.title %><br />
-    <%= link_to 'Delete Article', article_path(x), method: :delete, data: {confirm: "Are you sure?"} %>
-  </div>
-  <div class="three columns grey center">
-    Description<br />
-    <%= x.description %>
-  </div>
-  <div class="two columns grey center">
-    Created By<br />
-    <%= x.user.username if x.user %>
-  </div>
-  <div class="two columns grey center">
-    Created<br />
-    <%= time_ago_in_words(x.created_at) %> ago
-  </div>
-  <div class="two columns grey center">
-    Edited<br />
-    <%= time_ago_in_words(x.updated_at) %> ago
+  <div class="eight columns grey center">
+    <strong><%= x.title %></strong><br /><hr><br />    
+    <p><%= truncate(x.description, :length => 190) %></p><hr>
+	<div class="right">
+	<% if logged_in? && current_user == x.user %>
+	<%= link_to 'Delete', article_path(x.id), method: :delete, data: { confirm: "Are you sure you want to delete this article?"} %> | <%= link_to 'Edit', edit_article_path(x.id) %> | 
+	<% end %>
+	<%= link_to 'View', article_path(x.id) %></div>
   </div>
 </div>
 

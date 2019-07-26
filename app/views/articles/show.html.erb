@@ -3,28 +3,18 @@
 </div>
 
 <div class="row">
-  <div class="one columns grey center">
-    <%= @article.id %><br />
-    <%= link_to 'EDIT', edit_article_path(@article.id) %>
+  <div class="two columns grey center">
+        <strong>Author:</strong><br /><%= link_to @article.user.username, user_path(@article.id) if @article.user %><br/><br/>Posted <%= time_ago_in_words(@article.created_at) %> ago
   </div>
-  <div class="two columns grey center"><strong>Title</strong><br />
-    <%= @article.title %>
-  </div>
-  <div class="three columns grey center"><strong>Description</strong><br />
-    <%= @article.description %>
-  </div>
-  <div class="two columns grey center"><strong>Author</strong><br />
-    <%= link_to(@article.user) do %>
-		<%= @article.user.username if @article.user %>
+  <div class="ten columns grey center">
+    <strong><%= @article.title %></strong><br /><hr><br />    
+    <p><%= @article.description %></p><hr>
+	<div class="center">
+	Last revision: <%= time_ago_in_words(@article.updated_at) %> ago
+	<% if logged_in? && current_user == @article.user %>
+	 | <%= link_to 'Delete', article_path(@article.id), method: :delete, data: { confirm: "Are you sure you want to delete this article?"} %> | <%= link_to 'Edit', edit_article_path(@article.id) %>
 	<% end %>
-
-<br />
-  </div>
-  <div class="two columns grey center"><strong>Time Published</strong><br />
-    <%= time_ago_in_words(@article.created_at) %>
-  </div>
-  <div class="two columns grey center"><strong>Since Revision</strong><br />
-    <%= time_ago_in_words(@article.updated_at) %>
+	</div>
   </div>
 </div>
 
