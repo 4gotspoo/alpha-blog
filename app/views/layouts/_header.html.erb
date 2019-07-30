@@ -45,3 +45,13 @@
 </div>
 
 <% end %>
+
+<% if logged_in? && current_user.admin? %>
+
+<div class="row">
+	<div class="twelve columns green center">
+		You are currently operating with administrator privileges.
+	</div>
+</div>
+
+<% end %>

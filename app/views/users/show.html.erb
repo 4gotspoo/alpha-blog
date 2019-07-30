@@ -6,9 +6,10 @@
 
 <div class="row">
   <div class="three columns grey center">
-    <strong>Username:</strong>
-	<p><%= @user.username %></p>
-	<%= gravatar_for @user, size: 120 %>
+    <strong>Username:</strong><br />
+	<%= @user.username %><br />
+	<%= gravatar_for @user, size: 120 %><br />
+	<%= link_to 'Delete', user_path(@user.id), method: :delete, data: { confirm: "Are you sure you want to delete this user and all authored articles?" } if (logged_in? and current_user.admin?) %>
   </div>
   <div class="nine columns grey center">
     <strong>Authored Articles:</strong><br />
@@ -34,7 +35,7 @@
 			<%= x.title %>
 		</div>
 		<div class="six columns center">
-			<%= x.description %>
+			<%= truncate(x.description, :length => 190) %>
 		</div>
 	</div>
 	<hr>
