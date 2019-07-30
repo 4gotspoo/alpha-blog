@@ -11,7 +11,7 @@
 
 <div class="row">
   <div class="four columns grey center">
-        <strong>Author:</strong><br /><%= link_to x.user.username, user_path(x.id) if x.user %><br/><br/>Posted <%= time_ago_in_words(x.created_at) %> ago
+        <strong>Author:</strong><br /><%= link_to x.user.username, user_path(x.user.id) if x.user %><br/><br/>Posted <%= time_ago_in_words(x.created_at) %> ago
   </div>
   <div class="eight columns grey center">
     <strong><%= x.title %></strong><br /><hr><br />    
