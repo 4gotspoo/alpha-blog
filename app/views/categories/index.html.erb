@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="twelve columns grey center"><h2>Category list</h2></div>
+</div>
+
+<% @categories.each do |x| %>
+
+<div class="row">
+  <div class="twelve columns grey center">
+    <%= link_to "#{x.name}", category_path(x) %>
+  </div>
+</div>
+
+<% end %>
+
+
