@@ -13,12 +13,14 @@
 	<% end %>
 
 	<% if @category.errors.any? %>
+	<div class="error">
 	<p>The following errors are preventing the category from being created:</p>
 		<ul>
 		<% @category.errors.full_messages.each do |msg| %>
 			<li><%= msg %></li>
 		<% end %>
 		</ul>
+	</div>
 	<% end %>
 
 	<%= link_to 'Cancel request, return to article list', articles_path %>
