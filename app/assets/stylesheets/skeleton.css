@@ -466,8 +466,13 @@ textarea {
   height: 150px;
 }
 .right {
-  text-align:right; 
+  float:right; 
   margin-right: 1em; 
+  font-size: 70%; }
+
+.left {
+  float:left; 
+  margin-left: 1em; 
   font-size: 70%; }
 
 hr {
@@ -484,6 +489,9 @@ border-radius: 30%; }
   margin-top: 0.1em;
   font-size: 120%; }
 
+.checkbox {
+    display: inline-block;
+	margin-left:5px; }
 .pagination {
   text-align: center;
 

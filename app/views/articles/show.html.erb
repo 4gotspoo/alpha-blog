@@ -4,7 +4,13 @@
 
 <div class="row">
   <div class="two columns grey center">
-        <strong>Author:</strong><br /><%= link_to @article.user.username, user_path(@article.user.id) if @article.user %><br/><br/>Posted <%= time_ago_in_words(@article.created_at) %> ago
+        <strong>Author:</strong><br /><%= link_to @article.user.username, user_path(@article.user.id) if @article.user %><br/><br/>
+		Posted <%= time_ago_in_words(@article.created_at) %> ago<br /><br />
+		Categories<br /><% if @article.categories.any? %>
+		<%= render @article.categories %>
+		<% else %>
+		None
+		<% end %>
   </div>
   <div class="ten columns grey center">
     <strong><%= @article.title %></strong><br /><hr><br />    
