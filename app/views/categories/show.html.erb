@@ -1,9 +1,9 @@
 <div class="row">
   <div class="twelve columns grey center"><h2>Viewing Category: <%= @category.name %></h2></div>
 </div>
-<% if logged_in? %>
+<% if logged_in? && current_user.admin? %>
 <div class="row">
-  <div class="twelve columns grey center"><%= link_to 'Create a new article', new_article_path %></div>
+  <div class="twelve columns grey center"><%= link_to 'Edit category', edit_category_path(@category) %></div>
 </div>
 <% end %>
 
